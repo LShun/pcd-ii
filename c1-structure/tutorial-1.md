@@ -63,9 +63,9 @@ struct House {
     char pattern;
     int area;
     double interestRate;
-};
+} pelangi;
 
-struct House pelangi, alpha;
+struct House alpha;
 ```
 **(b) Write statements to perform the following:**
 - assign the values “Setapak” to location of alpha, and "Gelugor" to location of pelangi
@@ -76,6 +76,8 @@ struct House pelangi, alpha;
 ```c
 strcpy(alpha.location, "Setapak");
 strcpy(pelangi.location, "Gelugor");
+alpha.interestRate = 0.04;
+pelangi.interestRate = 0.04;
 alpha.pattern = getchar();
 scanf("%d", &pelangi.area);
 ```
