@@ -132,7 +132,7 @@ while(fscanf(filePtr1, "%[^\n]\n%d%d%d%d\n", name, &mark[0], &mark[1], &mark[2],
 (e)
 fclose(filePtr1);
 fclose(filePtr2);
-
+```
 
 ## Q5
 ```c
