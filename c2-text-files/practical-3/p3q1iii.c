@@ -1,6 +1,6 @@
 /*
 Name: p3q1iii.c
-Desc: Read unknown number of integers from a file and write to another fiel
+Desc: Read unknown number of integers from a file and write to another file
 */
 
 #include <stdio.h>
@@ -24,6 +24,14 @@ int main(void)
         exit(-1);
     }
 
+    //open file for writing
+    fout = fopen(OUT_FILE, "w");
+    if (fout == NULL)
+    {
+        printf("Output file cannot be opened. Check OUT_FILE path.\n");
+        exit(-1);
+    }
+
     //repeat till reach EOF
     while (fscanf(fin, "%d", &n) != EOF)
     {
@@ -32,17 +40,10 @@ int main(void)
     }
         
     //calculate average
-    avg = sum / tnum;
+    avg = (double) sum / tnum;
 
-    //write to file sum & avg
-    fout = fopen(OUT_FILE, "w");
-    if (fout == NULL)
-    {
-        printf("Output file cannot be opened. Check OUT_FILE path.\n");
-        exit(-1);
-    }
     fprintf(fout, "%-8s= %d\n"
-           "%-8s= %f\n", "Sum", sum, "Average", avg);
+                  "%-8s= %f\n", "Sum", sum, "Average", avg);
 
     //print completion
     printf("Process completed.\n");

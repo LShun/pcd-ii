@@ -22,6 +22,8 @@ typedef struct
 //function prototypes
 int displayInfo(Employee* emp);
 int modify(Employee* emp);
+int matchPrint(Employee *emp, int i);
+int matchModify(Employee *emp, int match, int i);
 
 int main(void)
 {
@@ -34,7 +36,7 @@ int main(void)
     displayInfo(emp);
 
     //prompt to modify by ID
-    modify(emp);
+    modify(emp) == 0;
 }
 
 int displayInfo(Employee* emp)
@@ -59,7 +61,7 @@ int modify(Employee* emp) //modify database for employee
 {
     //variables
     char id[4], i; 
-    int match = -1, choice;
+    int match = -1;
     Employee snapshot;
 
     while (match == -1)
@@ -70,7 +72,7 @@ int modify(Employee* emp) //modify database for employee
         rewind(stdin);
 
         //if exit code, then exit
-        if (id == "-1")
+        if (strcmp(id, "-1") == 0)
         {
             printf("Exited.\n");
             return 0;
@@ -82,24 +84,38 @@ int modify(Employee* emp) //modify database for employee
             {
                 //track the position of the employee in the array
                 match = i;
-                break;
+                //prompt info about matched employee
+                matchPrint(emp, match);
+                //ask for editing
+                matchModify(emp, match, i);
             }
         }
     }
+}
 
-    //prompt info about matched employee
+int matchPrint(Employee *emp, int i)
+{
     //print header
     printf("Modifying for: \n\n" "%-16s %-16s %-16s\n\n", "Employee Name", "Date Joined", "Department");
     printf("%-16s %02d/%02d/%-10d %-16s\n\n", emp[i].name, emp[i].joinDate.day, emp[i].joinDate.month, emp[i].joinDate.year, emp[i].dept);
+    return 0;
+}
+
+int matchModify(Employee *emp, int match, int i)
+{
+    //variables
+    int choice;
+    Employee snapshot;
+
     //keep a snapshot of the original data
     snapshot = emp[i];
 
     //ask user which item to edit
     printf("Which particular would you like to edit?\n"
-           "1. Name\n"
-           "2. Join Date\n"
-           "3. Department\n"
-           "(Enter : 1-3): ");
+        "1. Name\n"
+        "2. Join Date\n"
+        "3. Department\n"
+        "(Enter : 1-3): ");
 
     //Get user input for replacement data
     scanf("%d", &choice);
@@ -118,13 +134,11 @@ int modify(Employee* emp) //modify database for employee
             scanf("%[^\n]", emp[match].dept);
             break;
     }
-    
     //Show changes
     printf("Modifed: \n\n" "%-16s %-16s %-16s\n\n", "Employee Name", "Date Joined", "Department");
     printf("From:\n");
     printf("%-16s %02d/%02d/%-10d %-16s\n", snapshot.name, snapshot.joinDate.day, snapshot.joinDate.month, snapshot.joinDate.year, snapshot.dept);
     printf("To  :\n");
     printf("%-16s %02d/%02d/%-10d %-16s\n", emp[match].name, emp[match].joinDate.day, emp[match].joinDate.month, emp[match].joinDate.year, emp[match].dept);
-
     return 0;
 }

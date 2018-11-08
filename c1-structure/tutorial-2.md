@@ -21,9 +21,9 @@ iii) The diagram gives you an idea of the array of
 structures product. What are the values of the
 following after the initialization?
 ```c
-product[1].year == 2012
-product[2].id == "3333"
-product[0].name == "AAA"
+2012
+"3333"
+"AAA"
 ```
 
 ## Q2
@@ -37,7 +37,7 @@ Use typedef to declare a structure called Personal which has the following membe
 Declare a variable called strong of the structure type that you have just created.
 ```c
 typedef struct {
-    char name[30];
+    char name[20];
     char sex;
     Date birthday;
 } Personal;
@@ -68,17 +68,17 @@ iii) Write statements to accept 100 sets of employee data and store them all int
 ```c
 for (int i = 0; i < 100; i++)
 {
-    printf("Enter employee name: ");
-    scanf("%[^\n]", &emp[i].employeeName);
+    printf("Enter employee name: "); //OPTIONAL
+    scanf("%[^\n]", &emp[i].employeeName); 
     rewind(stdin);
-    printf("Enter employee ID: ");
+    printf("Enter employee ID: "); //OPTIONAL
     gets(emp[i].employeeId);
-    printf("Enter employee address: ");
+    printf("Enter employee address: "); //OPTIONAL
     scanf("%[^\n]", &emp[i].address);
     rewind(stdin);
-    printf("Phone Number:");
+    printf("Phone Number:"); //OPTIONAL
     gets(emp[i].phoneNumber);
-    printf("Salary: ");
+    printf("Salary: "); //OPTIONAL
     scanf("%d", &emp[i].salary);
     rewind(stdin);
 }

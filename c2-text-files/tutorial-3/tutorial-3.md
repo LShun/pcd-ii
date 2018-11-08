@@ -23,11 +23,11 @@ if (pOut == NULL)
 
 (IV)
 ```
-int numbers[4] = {1, 2, 3, 4};
-
+printf("Enter 4 integers (ex: 1 2 3 4)): ");
 for(int i = 0; i < 4; i++)
 {
-    fprintf(numbers[i], "%d ", pOut);
+    scanf("%d", &num);
+    fprintf(num, "%d ", pOut);
 }
 ```
 
@@ -56,23 +56,14 @@ int main(void)
 
     //input
     //request for item code
-    for (;;)
+    code = 0
+    printf("Enter item code, units sold, and price (Ex: 2 4 60), -1 to cancel: ");
+    scanf("%d", &code);
+    while (code != -1)
     {
-        printf("Enter item code (1-5), -1 to cancel: ");
-        scanf("%d", &code);
-        if (code == -1)
-            break;
-        //request for units sold
-        printf("Enter units sold, -1 to cancel: ");
         scanf("%d", &unit);
-        if (code == -1)
-            break;
-        //request for unit price
-        printf("Enter unit price, -1 to cancel: ");
         scanf("%lf", &price);
-        if (price == -1)
-            break;
-        
+
         //process
         //nothing
 
@@ -80,6 +71,9 @@ int main(void)
         //write to file contents in variable
         fprintf(fp, "%-10d %10d %10.2f\n", code, unit, price);
 
+        //prompt for new input
+        printf("Enter item code, units sold, and price (Ex: 2 4 60), -1 to cancel: ");
+        scanf("%d", &code);
     }
     
     //end of job
@@ -93,12 +87,12 @@ int main(void)
 
 ## Q3
 (I)
-```
+```c
 FILE* fPtr = fopen("number.txt", "r");
 ```
 
 (II)
-```
+```c
 if (fPtr == NULL)
 {
     printf("File cannot be opened.\n");
@@ -107,7 +101,7 @@ if (fPtr == NULL)
 ```
 
 (III)
-```
+```c
 int num, sum = 0, count = 0;
 
 while (fscanf(fPtr, " %d", &num) != NULL)
@@ -120,7 +114,10 @@ printf("Sum = %d, Numbers = %d", sum, count);
 ```
 
 ## Q4
-```c#include <stdio.h>
+Assume that the data is stored with a newline in between. (For convenience, can
+also assume that they are one word only. )
+```c
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct {
@@ -205,7 +202,7 @@ int main(void)
         exit(-1);
     }
 
-    for(;;)
+    while(1)
     {
         //read the data
         salesMan = readData(inp);

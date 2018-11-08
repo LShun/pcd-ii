@@ -28,7 +28,7 @@ int main(void)
     }
         
     //calculate average
-    avg = sum / tnum;
+    avg = (double) sum / tnum;
     //display sum & avg
     printf("%-8s= %d\n"
            "%-8s= %f\n", "Sum", sum, "Average", avg);

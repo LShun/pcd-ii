@@ -6,6 +6,7 @@ Desc: Read specified integers from a file
 #include <stdio.h>
 #include <stdlib.h>
 #define T_NUM 6
+
 int main(void)
 {
     //variables
@@ -29,7 +30,7 @@ int main(void)
     }
         
     //calculate average
-    avg = sum / T_NUM;
+    avg = (double) sum / T_NUM;
     //display sum & avg
     printf("%-8s= %d\n"
            "%-8s= %f\n", "Sum", sum, "Average", avg);
