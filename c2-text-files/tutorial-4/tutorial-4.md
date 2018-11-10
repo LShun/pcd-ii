@@ -1,4 +1,9 @@
 # Tutorial 4
+- [Tutorial 4](#tutorial-4)
+    - [Q1](#q1)
+    - [Q2](#q2)
+    - [Q3](#q3)
+    - [Q4](#q4)
 
 ## Q1
 (a)
@@ -133,7 +138,49 @@ while(fscanf(filePtr1, "%[^\n]\n%d%d%d%d\n", name, &mark[0], &mark[1], &mark[2],
 fclose(filePtr1);
 fclose(filePtr2);
 ```
+## Q4
+### Write a program to read the data from PartTime.txt into a structure variable and display the amount of wages for each of the part-timers, where
 
+### Wage = hourlyRate * hoursWorked
+
+### Your program should display an error message and terminate the program if the file PartTime.txt cannot be opened.
+
+### Given the structure for PartTimer:
+```
+#include <stdio.h>
+#include <stdlib.h>
+//declarations
+#define IN_FILE "PartTime.txt"
+//structures
+typedef struct
+{
+	int payrollNo;
+	float hourlyRate;
+	int hoursWorked;
+} PartTimer;
+
+int main(void)
+{
+	//variables
+	FILE *fp = fopen(IN_FILE, "r");
+    if (fp == NULL)
+    {
+        printf("File cannot be opened.\n");
+        exit(-1);
+    }
+
+	PartTimer partTimer;
+    double wage;
+
+    printf("Payroll number        Wage (RM)\n"
+           "--------------        ---------\n");
+	while (fscanf(fp, "%d%f%d\n", &partTimer.payrollNo, &partTimer.hourlyRate, &partTimer.hoursWorked) == 3)
+	{
+        wage = partTimer.hourlyRate * partTimer.hoursWorked;
+        printf("%-22d%9.2f\n", partTimer.payrollNo, wage);
+    }
+}
+```
 ## Q5
 ```c
 #include <stdio.h>
