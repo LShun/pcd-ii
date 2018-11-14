@@ -21,8 +21,8 @@ int i; //should I declare outside
 for (int i = 0; i < size; i++)
 {
     employee[i].sSN = 0;
-    strcpy(employee[i].name, "\0");
-    strcpy(employee[i].address, "\0");
+    strcpy(employee[i].name, "");
+    strcpy(employee[i].address, "");
     employee[i].salary = 0;
 }
 
