@@ -21,20 +21,45 @@
       in same source file.
     - Also known as global variable.
     - Does not allocate memory, simply provides type information to compiler.
+## 2.
+```
+The purpose of the `register` keyword is to suggest to the compiler to place the variable in the register of the CPU. This is to speed up access time and reduce bytecode size at the cost of referencing by address causes undefined behavior.
+```
 
-## 3. a)
+## 3. 
+### a)
 | Local variable | Global Variable |
 | -------------- | --------------- |
 | Destroyed when function ends | Destroyed when program terminates |
 
-## b)
+### b)
 `static`
 
-## c)
+### c)
 A variable can be made accessible by declaring it as a global variable or an
 `extern` variable. The variable has the scope of the whole source file,
 therefore is not deallocated when any function returns. The inherent danger is
 that unwanted modifications can be done to the global variable because it exists
 throughout the entire program, and can be hard or near impossible to trace in
 large programs.
+
+## Q4
+### a
+| Variable | Visibility | Storage Class |
+| -------- | ---------- | ------------- |
+| x at line 6 | Entire program | `extern` |
+| z at line 23 | In fun2() | `auto` |
+
+(b)
+```
+
+2   
+4   
+6   
+8
+4
+```
+
+# Q6
+## (a)
 
