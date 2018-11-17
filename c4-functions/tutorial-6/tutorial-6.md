@@ -15,6 +15,21 @@ double inchToCm(int inch)
 }
 ```
 
+## Q2
+```c
+double converter(int h)
+{
+    //variables
+    double acres;
+
+    //convert the hectars to acres
+    acres = h * 2.47;
+
+    //return the acres
+    return acres;
+}
+```
+
 ## Q3
 ```c
 double hypotenuse(double a, double b)
@@ -26,3 +41,20 @@ double hypotenuse(double a, double b)
     return hypotenuse;
 }
 ```
+
+## Q4
+char gradeOf(int score)
+{
+    if      (score >= 80 && score <= 100)
+        return 'A';
+    else if (score >= 70 && score <= 79)
+        return 'B';
+    else if (score >= 50 && score <= 69)
+        return 'C';
+    else if (score >= 40 && score <= 49)
+        return 'D';
+    else if (score >= 0 && score <= 39)
+        return 'F';
+    else 
+        return 'X';
+}
