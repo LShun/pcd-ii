@@ -47,7 +47,7 @@ if (inPtr == NULL)
 (iv)
 ```c
 int i = 0;
-while(fscanf(inPtr, "%d %s %s %lf", &employee[i].sSN, &employee[i].name, &employee[i].address, &employee[i].salary) == 4)
+while(fscanf(inPtr, "%d %s %s %lf", &employee[i].sSN, employee[i].name, employee[i].address, &employee[i].salary) == 4)
 {
     i++;
 }
