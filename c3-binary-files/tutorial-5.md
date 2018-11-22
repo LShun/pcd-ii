@@ -8,6 +8,10 @@
 | Lines present. Each line is ended by a '\n' character. | Lines | No lines or newline character. |
 
 ##  Q2
+NOTE: Only check SYNTAX ERROR, not LOGIC ERROR
+NOTE2: Whether it is a binary or a text file, it does not depend on file
+extension, but the writing/reading mode (rb, wb/r, b). For example, text you can
+also .bin.
 
 `Coord point = {'7', '8'}` -> `Coord point = {7, 8}`
 The `point` variable is initialized with the ASCII representation of 7 and 8,
@@ -62,11 +66,9 @@ int main(void)
 ```
 while(fread(&p, sizeof(Product), 1, prodP) != EOF)
 {
-    profit = p.sellPrice - p.costPrice;
-    printf("Enter unit sold: ");
-    scanf("%d", &unit);
     s.prod = p;
-    s.profit = profit;
-    s.unitsSold = unit;
+    s.profit = p.sellPrice - p.costPrice;
+    printf("Enter unit sold: ");
+    scanf("%d", &s.unitsSold);
     fwrite(&s, sizeof(Sales), 1, salesP);
 }
