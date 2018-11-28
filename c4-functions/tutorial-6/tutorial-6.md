@@ -62,22 +62,23 @@ double hypotenuse(double a, double b)
 ```
 
 ## Q4
+```c
 char gradeOf(int score)
 {
-    if      (score >= 80 && score <= 100)
+    if      (score >= 80)
         return 'A';
-    else if (score >= 70 && score <= 79)
+    else if (score >= 70)
         return 'B';
-    else if (score >= 50 && score <= 69)
+    else if (score >= 50)
         return 'C';
-    else if (score >= 40 && score <= 49)
+    else if (score >= 40)
         return 'D';
-    else if (score >= 0 && score <= 39)
+    else if (score >= 0)
         return 'F';
     else 
         return 'X';
 }
-
+```
 ## Q5
 (i)
 ```c
