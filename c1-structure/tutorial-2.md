@@ -79,13 +79,13 @@ for (int i = 0; i < 100; i++)
     printf("Phone Number:"); //OPTIONAL
     gets(emp[i].phoneNumber);
     printf("Salary: "); //OPTIONAL
-    scanf("%d", &emp[i].salary);
+    scanf("%lf", &emp[i].salary);
     rewind(stdin);
 }
 ```
 iv) Write a statement to change the employeeName of the last employee in the array emp in (ii) to
 “Anthony Swamy”.
-```c
+```c[]
 strcpy(emp[100].employeeName, "Anthony Swamy");
 ```
 v) Use typedef to declare a structure called Boss with the following members (including a nested structure):
