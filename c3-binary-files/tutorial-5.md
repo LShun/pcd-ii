@@ -1,4 +1,11 @@
 # Tutorial 5
+- [Tutorial 5](#tutorial-5)
+  - [Q1](#q1)
+  - [Q2](#q2)
+  - [Q3](#q3)
+  - [Q4](#q4)
+  - [Q5](#q5)
+
 ## Q1
 
 | Text File | Differences | Binary Files |
