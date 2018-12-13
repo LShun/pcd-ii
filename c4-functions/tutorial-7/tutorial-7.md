@@ -1,31 +1,31 @@
 # Tutorial 7
 
 - [Tutorial 7](#tutorial-7)
-    - [Q1](#q1)
-    - [Q2](#q2)
-    - [Q3](#q3)
-        - [a](#a)
-        - [a(ii)](#aii)
-        - [b](#b)
-    - [Q4](#q4)
-    - [Q5](#q5)
-    - [Q6](#q6)
-    - [Q7](#q7)
-        - [(i)](#i)
-        - [(ii)](#ii)
-        - [(iii)](#iii)
-    - [8.](#8)
-        - [(a)](#a)
-        - [(b)](#b)
-        - [(c)](#c)
-    - [Q9](#q9)
-        - [(i)](#i-1)
-        - [(ii)](#ii-1)
-        - [(iii)](#iii-1)
-    - [Q10](#q10)
-    - [Q11](#q11)
-    - [Q12](#q12)
-    - [Q13](#q13)
+  - [Q1](#q1)
+  - [Q2](#q2)
+  - [Q3](#q3)
+    - [a](#a)
+    - [a(ii)](#aii)
+    - [b](#b)
+  - [Q4](#q4)
+  - [Q5](#q5)
+  - [Q6](#q6)
+  - [Q7](#q7)
+    - [(i)](#i)
+    - [(ii)](#ii)
+    - [(iii)](#iii)
+  - [8.](#8)
+    - [(a)](#a)
+    - [(b)](#b)
+    - [(c)](#c)
+  - [Q9](#q9)
+    - [(i)](#i-1)
+    - [(ii)](#ii-1)
+    - [(iii)](#iii-1)
+  - [Q10](#q10)
+  - [Q11](#q11)
+  - [Q12](#q12)
+  - [Q13](#q13)
 
 ## Q1
 Explain the difference between pass by value and pass by address in parameter
@@ -39,7 +39,10 @@ Local variables passed by value will be destroyed after the function ends. Local
 variables passed by address are not destroyed after the function ends.
 
 ## Q2
-Write a function prototype for a function named calculate that returns void and contains an integer value parameter x, and a reference parameter to a long double, y. 
+Write a function prototype for a function named calculate that returns void and
+contains an integer value parameter x, and a reference parameter to a long
+double, y.
+ 
 Ans:
 `void calculate(int x, long double* y);`
 
@@ -79,14 +82,11 @@ int upgrade(int mark, int *newMark)
 ```c
 int upgrade(int mark, int *newMark)
 {
-    if (mark < 40)
+    if (mark < 40 && newMark == mark)
         *newMark = mark + 10;
-    else
-        *newMark = mark;
-        
-    if (newMark == mark)
         printf("Yes");
     else
+        *newMark = mark;
         printf("No");
 }
 ```
