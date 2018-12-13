@@ -8,8 +8,12 @@
     - [c)](#c)
   - [Q4](#q4)
     - [a](#a)
-- [Q6](#q6)
+- [5.](#5)
   - [(a)](#a)
+  - [(b)](#b)
+- [6.](#6)
+  - [(a)](#a-1)
+  - [(b)](#b-1)
 
 ## 1.
 - `auto`
@@ -66,11 +70,44 @@ large programs.
 
 2   
 4   
-6   
-8
+12   
+48
 4
 ```
-
-# Q6
+# 5.
 ## (a)
+A = extern
+B = auto
+C = auto
+D = static
+E = auto
+
+## (b)
+22
+22
+23
+43
+24
+65
+
+# 6.
+## (a)
+| Variable Name | Line Number | Storage Class | Scope (Line Num) |
+| ------------- | ----------- | ------------- | ---------------- |
+| x | 3 | `extern` | 3-26 |
+| c | 7 | `auto` | 7-10 |
+| y | 12 | `static` | 12-26 |
+| x | 16 | `auto` | 16-18 |
+| d | 20 | `extern` | 20-26 |
+| w | 22 | `auto` | 22-26 |
+| v | 24 | `static` | 24-26 |
+
+## (b)
+1. `register` variables cannot be referenced/dereferenced. This is because they
+   are stored in the CPU registers, which does not have memory location
+   associated.
+2. Register storage size is extremely limited. Therefore, in default, the
+   compiler will automatically allocate variables into registers in the best way
+   possible. Using `register` keyword suboptimally can lead to degraded performance.
+
 
