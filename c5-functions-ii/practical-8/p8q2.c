@@ -22,11 +22,20 @@ int main(void)
     scanf("%d %d %d", &a, &b, &c);
 
     //calculate the two roots
-    rootsFx(a, b, c, &x1, &x2);
 
-    //print the two roots
-    printf("For the equation %dx^2 + %dx + %d\n"
-           "The roots are %lf and %lf.\n", a, b, c, x1, x2);
+    if (b*b - 4*a*c < 0)
+    {
+        printf("No real roots, discriminant, b^2-4ac less than 0\n");
+    }
+    else
+    {
+        rootsFx(a, b, c, &x1, &x2);
+
+        //print the two roots
+        printf("For the equation %dx^2 + %dx + %d\n"
+                "The roots are %lf and %lf.\n", a, b, c, x1, x2);
+    }
+
 }
 
 int rootsFx(int a, int b, int c, double *x1, double *x2)
