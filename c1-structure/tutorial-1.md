@@ -1,11 +1,11 @@
 # Tutorial 1 - Structure I
 - [Tutorial 1 - Structure I](#tutorial-1---structure-i)
-    - [Q1](#q1)
-    - [Q2](#q2)
-    - [Q3](#q3)
-    - [Q4](#q4)
-    - [Q5](#q5)
-    - [Q6](#q6)
+  - [Q1](#q1)
+  - [Q2](#q2)
+  - [Q3](#q3)
+  - [Q4](#q4)
+  - [Q5](#q5)
+  - [Q6](#q6)
 
 ## Q1
 **(i) What is a structure?**
@@ -59,7 +59,7 @@ members of the structure House are as follows:**
 
 ```c
 struct House {
-    char location[30];
+    char location[20];
     char pattern;
     int area;
     double interestRate;
