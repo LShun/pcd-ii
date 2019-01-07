@@ -1,4 +1,5 @@
 # Tutorial 8
+
 - [Tutorial 8](#tutorial-8)
   - [1.](#1)
   - [2.](#2)
@@ -14,6 +15,22 @@
 - [6.](#6)
   - [(a)](#a-1)
   - [(b)](#b-1)
+- [Q7](#q7)
+  - [a)](#a-1)
+  - [b)](#b-1)
+  - [c)](#c-1)
+  - [d)](#d)
+  - [e)](#e)
+  - [(i)](#i)
+  - [(ii)](#ii)
+- [Q8](#q8)
+  - [(i)](#i-1)
+  - [(ii)](#ii-1)
+  - [(iii)](#iii)
+- [Q9.](#q9)
+  - [(a)](#a-2)
+  - [(b)](#b-2)
+  - [(c)](#c)
 
 ## 1.
 - `auto`
@@ -111,3 +128,58 @@ E = auto
    possible. Using `register` keyword suboptimally can lead to degraded performance.
 
 
+# Q7
+
+## a)
+SC: extern
+scope: 2-20
+## b)
+SC: auto
+scope: 10-14
+## c)
+SC: static
+scope: 11-14
+## d)
+SC: extern
+scope: 15-20
+## e)
+SC: auto
+scope: 16-20
+
+## (i) 
+C
+## (ii) 
+11
+
+# Q8
+## (i)
+extern
+## (ii)
+auto
+## (iii)
+auto
+
+Static variable is a type of variable in which it is only accessible in the scope it is declared, but retains value between function calls.
+
+# Q9.
+## (a)
+| Variable | Scope |
+| -------- | ----- |
+| x at line 02 | 02-21 |
+| num at line 04 | 04-18 |
+| printXLine at line 02 | 02-28 |
+| v at line 01 | 01-28 |
+
+## (b)
+| Variable | Storage class |
+| -------- | ------------- |
+| v        | extern        |
+| w        | auto          |
+
+## (c)
+| Variable | Value |
+| -------- | ----- |
+| v at line 19 | 777 |
+| w at line 19 | 22 |
+| v at line 27 | 777 |
+| w at line 27 | 33 |
