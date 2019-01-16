@@ -7,6 +7,9 @@
   - [Q5](#q5)
     - [(i)](#i)
     - [(ii)](#ii)
+  - [Q6](#q6)
+  - [Q7](#q7)
+  - [Q8](#q8)
 
 ## Q1
 
@@ -85,9 +88,9 @@ int isDatuk(Employee emp)
 {
     if (strcmp(emp.empTitle, "Datuk") == 0))
     {
-        return 0;
+        return 1;
     }
-    else return 1;
+    else return 0;
 }
 ```
 
@@ -95,4 +98,62 @@ Example of function call:
 
 ```c
 status = isDatuk(emp);
+```
+
+## Q6
+
+```c
+Line createLine(Point A, Point B)
+{
+    Line line;
+    line.p1 = A;
+    line.p2 = B;
+    return line;
+}
+```
+
+## Q7
+
+```c
+int lineDirection(Line line)
+{
+    if(line.p1.x == line.p2.x)
+        return 1; //vertical
+    else if (line.p1.y == line.p2.y)
+        return 2; //horizontal
+    else return 3; //oblique
+}
+```
+
+## Q8
+
+```c
+void getPoint(Point *point)
+{
+    printf("Enter new point's x-coordinate: ");
+    scanf("%d", &point->x);
+    printf("Enter new point's y-coordinate: ");
+    scanf("%d", &point->y);
+}
+```
+
+```c
+int main(void)
+{
+    Point A, B;
+    Line l;
+    int d;
+    getPoint(&A);
+    getPoint(&B);
+    l = createLine(A, B);
+    d = lineDirection(l);
+    printf("The line is ");
+
+    switch(d)
+    {
+        case 1: printf("vertical.\n"); break;
+        case 2: printf("horizontal.\n"); break;
+        default: printf("oblique.\n");
+    }
+}
 ```
