@@ -23,7 +23,8 @@
 
 Levels of cohesion in program design.
 
-- Most desirable: Function cohesion
+- Most desirable: *Functional cohesion* 
+  - Lecturer note: Better functional cohesion instead of function cohesion
 - Sequential cohesion
 - Communicational cohesion
 - Procedural cohesion
@@ -35,7 +36,7 @@ Levels of cohesion in program design.
 
 6 types of cohesion.
 
-- Function cohesion
+- Functional cohesion
   - Function performs 1 task
   - Example: Compute cosine of angle
 - Sequential cohesion
@@ -55,19 +56,32 @@ Levels of cohesion in program design.
   - Same as procedural cohesion, but sequence is not important
   - Example: Display record in staff depending on the record type
 
+Answer given by lecturer:
+
+- **Coincidental** cohesion occurs when **there is no meaningful relatioship among the elements of a module.** Coincidental cohesion can occur if an existing program is modularized by chopping it into pieces and making different pieces modules.
+- A module has **logical cohesion** if there is **some logical relationship between the elements of a module**, and the elements perform functions that fill in the same logical class. A typical example of this kind of cohesion is a module that performs all the inputs or all outputs.
+- **Temporal cohesion** is the same as logical cohesion, ecept the elements are also related in time and are executed together. Modules that perform activities like "initialization", "clean-up", and "termination" are usually temporary bound.
+- A **procedurally cohesive module** contains elements that belong to a common procedural unit. For example, a loop or a sequence of decision statements in a module may be combined to form a separate module.
+- A module with **communicational cohesion** has elements that are related by a reference to the same input or output data. That is, in a communicationally bound module, the elements are together because they operate on the same input or output data.
+- When elements are together in a module because the output of one forms the input to another, we get **sequential cohesion**.
+- **Functional cohesion** is the strongest cohesion. In a functionally bound module, all the elements of the module are not related to performinga single functon. By function, we do not mean simply mathematical functions; modules accomplishing a single goal are also included.
+
 ## Q3
 
 ### (i) Pathological coupling
 
 A type of coupling where a function modify other function's data.
+L.Ans: Modules changes each others data
 
 ### (ii) Simple data coupling
 
 A type of coupling where function share data by passing parameters, and returning results.
+L.Ans: Modules share data by parameter passing
 
 ### (iii) Coincidental cohesion
 
 A type of cohesion in functions where the function performs more than 1 task which are completely unrelated to each other. The tasks just happens to be in a same function.
+L.A.: No meaninful relationship among the elements of a module.
 
 ## Q4
 
@@ -80,6 +94,7 @@ Changes in one place result in changes in another place.
 ### (ii) Control Coupling
 
 A main module is used to control the functions.
+L.A.: 2 module communicating with a control flag (first tells second what to do via flag)
 
 ### (iii) Communicational Cohesion
 
@@ -90,6 +105,7 @@ Function which perform more than 1 task, its contents are related by data, but d
 **What is coupling? List any 3 levels of coupling.**
 
 A. Coupling is the measure of the strength of connection between two functions.
+L.A.: Coupling is the measurement of the strength of interconnection between 2 modules.
 
 The three levels of coupling are:
 
@@ -108,6 +124,9 @@ Loose coupling is where functions are not closely related to each other. Changes
 **Which is the most intimate way to share data?**
 
 The most intimate way to share data is pathological coupling. Pathological coupling is where two or more functions share data. Changes in one function will affect another function in consequence.
+
+L.Ans: Tight Coupling 
+Note: Could also be pathological coupling, but marking scheme is tight coupling.
 
 ## Q7
 
@@ -147,7 +166,8 @@ The lowest level of cohesion is coincidental cohesion.
 
 ## Q10
 
-Coupling is the measure of the strength of connection between two modules. Cohesion is the measure of the strength of individual modules.
+Coupling is the measure of the strength of connection between two modules. Cohesion is the measure of the internal strength of individual modules.
+L.A.: Cohesion is a measure of how well the module fit together.
 
 ## Q11
 
