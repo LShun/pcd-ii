@@ -103,11 +103,9 @@ status = isDatuk(emp);
 ## Q6
 
 ```c
-Line createLine(Point A, Point B)
+Line createLine(Point a, Point b)
 {
-    Line line;
-    line.p1 = A;
-    line.p2 = B;
+    Line line = {a, b};
     return line;
 }
 ```
